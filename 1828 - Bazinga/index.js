@@ -1,36 +1,35 @@
-function Bazinga(Sheldon, Raj) {
+function Bazinga(sheldon, raj) {
 
-    if (!Sheldon || !Raj)
+    if (!sheldon || !raj)
         throw new Error("Informe dois parametros")
 
-    Sheldon = Sheldon.toUpperCase();
-    Raj = Raj.toUpperCase();
+    sheldon = sheldon.toLowerCase();
+    raj = raj.toLowerCase();
 
     let correspondencia = {
-        TESOURA: 1,
-        PAPEL: 2,
-        PEDRA: 3,
-        SPOCK: 4,
-        LAGARTO: 5
+        tesoura: 1,
+        papel: 2,
+        pedra: 3,
+        spock: 4,
+        lagarto: 5
     }
 
-    if(!correspondencia[Sheldon] || !correspondencia[Raj])
-        return "Informe um valor valido";
+    sheldon = correspondencia[sheldon];
+    raj = correspondencia[raj];
 
-    Sheldon = correspondencia[Sheldon];
-    Raj = correspondencia[Raj];
-
-    if (Sheldon === Raj) 
-        return "De novo!"
-    if (Sheldon === 1 && (Raj === 2 || Raj === 5)) 
+    if(!sheldon || !raj)
+        return 'Informe um valor valido'
+    if (sheldon === raj) 
+        return 'De novo!'
+    if (sheldon === 1 && (raj === 2 || raj === 5)) 
         return 'Bazinga!'
-    if (Sheldon === 2 && (Raj === 3 || Raj === 4)) 
+    if (sheldon === 2 && (raj === 3 || raj === 4)) 
         return 'Bazinga!'
-    if (Sheldon === 3 && (Raj === 5 || Raj === 1)) 
+    if (sheldon === 3 && (raj === 5 || raj === 1)) 
         return 'Bazinga!'
-    if (Sheldon === 4 && (Raj === 4 || Raj === 1)) 
+    if (sheldon === 4 && (raj === 4 || raj === 1)) 
         return 'Bazinga!'
-    if (Sheldon === 5 && (Raj === 2 || Raj === 4)) 
+    if (sheldon === 5 && (raj === 2 || raj === 4)) 
         return 'Bazinga!'
 
     return 'Raj Trapaciou'
